@@ -8,9 +8,9 @@
 // arr.length = 3;
 //
 // console.log(arr);
-
-let fruits = ["Apple", "Orange", "Pear"];
-
-for (let i = fruits.length - 1; i >= 0; i--) {
-  console.log(fruits[i]);
-}
+//
+// let fruits = ["Apple", "Orange", "Pear"];
+//
+// for (let i = fruits.length - 1; i >= 0; i--) {
+//   console.log(fruits[i]);
+// }
