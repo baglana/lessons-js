@@ -2,7 +2,9 @@
 
 This is lessons repo.
 
-## Start
+## Working with the repo
+
+### Start
 
 1. Clone project
 
@@ -18,6 +20,22 @@ cd lessons-js
 
 3. Make sure you have latest lts version(even number) of [NodeJS](https://nodejs.org/en).
 4. Pull required latest packages:
+
+```shell
+npm i
+```
+
+### Update
+
+On every update of the lessons you wil need to pull latest changes
+
+1. Pull latest changes.
+
+```shell
+git pull
+```
+
+2. Rerun package install.
 
 ```shell
 npm i
