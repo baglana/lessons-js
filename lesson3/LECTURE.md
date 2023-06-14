@@ -107,6 +107,9 @@ const person = {
 	// using function as a value
 	greet() {
 		console.log('hello');
+	},
+	call: function () {
+		console.log('hey');
 	}
 }
 
@@ -207,7 +210,7 @@ console.log(Object.entries(user)); // [ [ "name", "John" ], [ "age", 30 ], [ "is
 ### Immutable and mutable
 
 One of the fundamental differences of objects versus primitives is that objects are stored and copied “by reference”,
-whereas primitive values: strings, numbers, booleans, etc – are always copied “as a whole value”.
+whereas primitive values: strings, numbers, booleans, etc. Are always copied “as a whole value”.
 
 A variable assigned to an object stores not the object itself, but its “address in memory” – in other words “a
 reference” to it.
@@ -295,7 +298,7 @@ a = "Hola!";
 const b = "Bye";
 // b = "Ciao" // Uncaught TypeError: invalid assignment to const 'b'
 
-let manager = {
+const manager = {
 	name: "Michael",
 	company: "Dunder Mifflin",
 };
