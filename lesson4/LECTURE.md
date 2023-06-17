@@ -56,6 +56,16 @@ console.log(sum(1, -1)) // 0
 console.log(sum(...[1, 2, 3])) // 6
 ```
 
+```js
+function sum(a, ...nums) {
+	return nums.reduce((acc, num) => acc + num, a);
+}
+
+console.log(sum(1, 2, 3)) // 6
+console.log(sum(1, -1)) // 0
+console.log(sum(...[1, 2, 3])) // 6
+```
+
 #### Default values
 
 In JavaScript, parameters of functions default to `undefined`. However, in some situations it might be useful to set a
@@ -182,6 +192,7 @@ can be converted
 
 ```js
 function loop(x) {
+	console.log(x);
 	// "x >= 10" is the exit condition (equivalent to "!(x < 10)")
 	if (x >= 10) {
 		return;
