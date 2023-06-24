@@ -49,6 +49,24 @@ console.log(message);
 }
 ```
 
+### Scope
+
+If __Lexical Environment__ is an object, __scope__ is a concept of where variables and functions are declared. They are
+some interchangeable.
+
+```js
+var globalVar = 'global';
+
+function exampleFn() {
+	if (true) {
+		let blockVar = 'block';
+	}
+	console.log(blockVar);
+}
+
+exampleFn() // ReferenceError: blockVar is not defined
+```
+
 ### Execution Context
 
 JavaScript’s execution context is an abstract concept that stands for the environment in which code is run. It’s how the
@@ -73,24 +91,6 @@ function multiplyByTwo(n) {
 }
 
 multiplyByTwo(5); // logs 10
-```
-
-### Scope
-
-If __Lexical Environment__ is an object, __scope__ is a concept of where variables and functions are declared. They are
-some interchangeable.
-
-```js
-var globalVar = 'global';
-
-function exampleFn() {
-	if (true) {
-		let blockVar = 'block';
-	}
-	console.log(blockVar);
-}
-
-exampleFn() // ReferenceError: blockVar is not defined
 ```
 
 ### Closures
@@ -132,9 +132,9 @@ var y = 20;
 ```
 
 ```js
-console.log(y); // undefined
+console.log(y); // Uncaught ReferenceError: can't access lexical declaration 'y' before initialization
 
-var y = 20;
+let y = 20;
 ```
 
 ```js
@@ -341,17 +341,17 @@ console.log(wizard.getFullName()); // "Gandalf the white"
 Create function `getVotes` returns votes object with `count` method.
 
 ```js
-const votes1 = getVotes({upvotes: 13, downvotes: 0});
+const votes1 = getVotes(13, 0);
 console.log(votes1.upvotes); // 13
 console.log(votes1.downvotes); // 0
 console.log(votes1.count()); // 13
 
-const votes2 = getVotes({upvotes: 2, downvotes: 33});
+const votes2 = getVotes(2, 33);
 console.log(votes2.upvotes); // 13
 console.log(votes2.downvotes); // 33
 console.log(votes2.count()); // -31
 
-const votes3 = getVotes({upvotes: 132, downvotes: 132});
+const votes3 = getVotes(132, 132);
 console.log(votes3.upvotes); // 132
 console.log(votes3.downvotes); // 132
 console.log(votes3.count()); // 0

@@ -1,7 +1,17 @@
-{
-  function log(name) {
-    console.log(`Hello ${name}!`);
-  }
-}
+// {
+//   function log(name) {
+//     console.log(`Hello ${name}!`);
+//   }
+// }
+//
+// log("Han");
 
-log("Han");
+// let x = 2;
+
+// function increment() {
+//   x++;
+// }
+//
+// increment();
+// increment();
+// console.log(x); // 4
