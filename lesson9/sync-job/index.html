@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="/vite.svg" rel="icon" type="image/svg+xml"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Vite + TS</title>
+</head>
+<body>
+<label for="quota">Number of primes:</label>
+<input id="quota" name="quota" type="text" value="1000000"/>
+
+<button id="generate">Generate primes</button>
+<button id="reload">Reload</button>
+
+<div id="output"></div>
+
+<label for="text"></label>
+<textarea
+        cols="62"
+        id="text"
+        name="text"
+        rows="5"
+        value="Try typing in here immediately after pressing 'Generate primes'"
+></textarea>
+
+<script src="/src/main.ts" type="module"></script>
+</body>
+</html>

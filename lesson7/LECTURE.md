@@ -781,13 +781,13 @@ and `last` names:
   with `@company.com` at the end. Make sure the entire email is in **lowercase**.
 
 ```js
-emp1 = Employee("John", "Smith")
+let emp1 = new Employee("John", "Smith")
 console.log(emp1.fullname) // "John Smith"
 
-emp2 = Employee("Mary", "Sue")
+let emp2 = new Employee("Mary", "Sue")
 console.log(emp2.email) // "mary.sue@company.com"
 
-emp3 = Employee("Antony", "Walker")
+let emp3 = new Employee("Antony", "Walker")
 console.log(emp3.firstname) // "Antony"
 console.log(emp3.lastname) // "Walker"
 ```
