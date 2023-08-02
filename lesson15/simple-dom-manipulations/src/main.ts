@@ -1,24 +1,68 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import "./style.css";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const ctrl = new AbortController();
+const signal = ctrl.signal;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+window.addEventListener(
+  "load",
+  () => {
+    // const btn = document.getElementById("click-me") as HTMLButtonElement;
+    // const btnRemove = document.getElementById(
+    //   "remove-event-listener",
+    // ) as HTMLButtonElement;
+    //
+    // function greetings(event: MouseEvent) {
+    //   console.log("target", event.target);
+    //   console.log("currentTarget", event.currentTarget);
+    //
+    //   const str = "Hey Yo!";
+    //   alert(str);
+    // }
+    //
+    // function removeEventListener() {
+    //   ctrl.abort();
+    // }
+    //
+    // if (btn) {
+    //   btn.addEventListener("click", greetings, { signal });
+    // }
+    //
+    // if (btnRemove) {
+    //   btnRemove.addEventListener("click", removeEventListener);
+    // }
+
+    const container = document.getElementById("container");
+    const child = document.getElementById("child");
+
+    if (container) {
+      container.addEventListener(
+        "click",
+        (event: MouseEvent) => {
+          console.log("parent target", event.target);
+          console.log("parent currentTarget", event.currentTarget);
+        },
+        { signal },
+      );
+    }
+
+    if (child) {
+      child.addEventListener(
+        "click",
+        (event: MouseEvent) => {
+          console.log("child target", event.target);
+          console.log("child currentTarget", event.currentTarget);
+        },
+        { signal },
+      );
+    }
+  },
+  true,
+);
+
+window.addEventListener(
+  "unload",
+  () => {
+    ctrl.abort();
+  },
+  true,
+);
