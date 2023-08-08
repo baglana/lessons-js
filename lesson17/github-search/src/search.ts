@@ -1,7 +1,7 @@
 import { type User } from "./types.ts";
 import renderCard from "./card.ts";
 
-const API_KEY = "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";
+const API_KEY = "";
 
 async function handleSearch(searchStr: string) {
   if (!searchStr) {
