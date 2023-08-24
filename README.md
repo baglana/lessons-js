@@ -2,6 +2,14 @@
 
 This is lessons repo.
 
+## Prerequisites
+
+You should be familiar with:
+
+1. Programming in general
+2. Have installed [NodeJS](https://nodejs.org), [npm](https://www.npmjs.com/)(comes with
+   NodeJS), [git](https://git-scm.com/)
+
 ## Working with the repo
 
 ### Start
