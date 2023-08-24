@@ -1,19 +1,17 @@
 # Lesson 2: Arrays
 
-## Theory
-
-### Definition
+## Definition
 
 Array is ordered collection, where we have a 1st, a 2nd, a 3rd element and so on
 
-### Declaration
+## Declaration
 
 ```js
 let arr = new Array();
 let arr = []; // suggested way
 ```
 
-### Indices and length
+## Indices and length
 
 Array elements are numbered, starting with zero.
 
@@ -58,9 +56,9 @@ let fruits = ["Apple", "Orange", "Plum"];
 console.log(fruits.length); // 3
 ```
 
-### Loop
+## Loop
 
-#### For
+### For
 
 ```js
 for (begin; condition; step) {
@@ -86,7 +84,7 @@ for (let i = 0; i < fruits.length; i++) {
 
 _More_: [Other loops and iterations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
 
-### Immutable and mutable
+## Immutable and mutable
 
 Some methods do not mutate the existing array that the method was called on, but instead return a new array. They do so
 by first constructing a new array and then populating it with elements. The copy always
@@ -138,21 +136,21 @@ console.log(fruits); // [["Banana"], ["Orange"], ["Pear"]]
 console.log(copiedFruits); // [["Banana"], ["Orange"], ["Pear"]]
 ```
 
-### Properties and Methods
+## Properties and Methods
 
 We will talk about some important properties and methods but please check
 the [list](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#constructor) for
 others
 
-#### Static methods
+### Static methods
 
 * [Array.isArray()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
 
-#### Instance properties
+### Instance properties
 
 * [length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
 
-#### Instance methods
+### Instance methods
 
 * [Array.prototype.at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at)
 * [Array.prototype.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
