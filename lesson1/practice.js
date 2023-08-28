@@ -18,7 +18,12 @@ function compute(operator, operand1, operand2) {
     case '-':
       return operand1 - operand2;
     case '/':
-      return operand1 / operand2;
+      if (operand2 === 0) {
+        console.log("You can't divide by zero");
+        return;
+      } else {
+        return operand1 / operand2;
+      }
     case '*':
       return operand1 * operand2;
     default:
