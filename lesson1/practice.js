@@ -9,9 +9,12 @@ console.log(`Operator ${operator}!`);
 const num2 = +prompt("Please type second number ");
 console.log(`Second number ${num1}!`);
 
-console.log(`Result is ${compute(operator, num1, num2)}`);
+const result = calculate(operator, num1, num2);
+if (result) {
+  console.log(`Result is ${result}`);
+}
 
-function compute(operator, num1, num2) {
+function calculate(operator, num1, num2) {
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -19,8 +22,7 @@ function compute(operator, num1, num2) {
       return num1 - num2;
     case '/':
       if (num2 === 0) {
-        console.log("You can't divide by zero");
-        return;
+        throw new Error("Can't divide by zero");
       } else {
         return num1 / num2;
       }
