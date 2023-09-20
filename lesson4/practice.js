@@ -109,3 +109,78 @@
 // console.log(sum(1)); // 1
 //
 // console.log(sum(12)); // 78
+
+
+/*
+function min(...args) {
+  if (args.length === 0) return null;
+  return args.reduce((a, b) => a < b ? a : b);
+}
+
+console.log(min()) // null
+
+console.log(min(1, 2, 3)) // 1
+
+console.log(min(3, 2, 1)) // 1
+
+console.log(min(123, 132, 213, 231, 312, 321)) // 123
+*/
+
+
+/*
+function showMessage(person, msg = '😀') {
+  console.log(`${person}: ${msg}`);
+}
+
+console.log(showMessage('Ann', 'Hello!')) // Ann: Hello!
+
+console.log(showMessage('Ann')) // Ann: 😀
+*/
+
+
+/*
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+
+console.log(calculate(8, 2, (num1, num2) => num1 + num2)) // 10
+
+console.log(calculate(8, 2, (num1, num2) => num1 - num2)) // 6
+
+console.log(calculate(8, 2, (num1, num2) => num1 * num2)) // 16
+
+console.log(calculate(8, 2, (num1, num2) => num1 / num2)) // 4
+*/
+
+
+/*
+function filter(arr, predicate) {
+    const result = [];
+    for (const item of arr) {
+      if (predicate(item)) {
+        result.push(item);
+      }
+    }
+    return result;
+  }
+
+console.log(filter([-3, -2, -1, 0, 1, 2, 3], (num) => num > 0)); // [1, 2, 3]
+
+console.log(filter(["dog", "wolf", "by", "family", "eaten", "camping"], (str) => str.length <= 5)); // ["by", "dog", "wolf", "eaten"]
+*/
+
+
+/*
+function sum(n) {
+  if (n <= 1) {
+    return 1;
+  }
+  return n + sum(n - 1);
+}
+
+console.log(sum(5)) // 15
+// 1 + 2 + 3 + 4 + 5 = 15
+
+console.log(sum(1)) // 1
+
+console.log(sum(12)) // 78*/
