@@ -1,6 +1,6 @@
 # Lesson 5: Functions
 
-### Lexical Environment
+## Lexical Environment
 
 Is a very complicated term for beginners. And would be suggested to learn this concepts after you will become more
 experienced engineers.
@@ -19,7 +19,7 @@ __Lexical Environment__ are created by:
 * _Functional_: Created by functions
 * _Code blocks_: It fairly new type. Created for code inside any `{}`: condition blocks, loops, `try..catch` etc.
 
-#### Code blocks
+### Code blocks
 
 Since ES2016 the `let` and `const` variables respects not just functional scopes, but also code block.
 
@@ -47,7 +47,7 @@ console.log(message);
 }
 ```
 
-### Scope
+## Scope
 
 If __Lexical Environment__ is an object, __scope__ is a concept of where variables and functions are declared. They are
 some interchangeable.
@@ -65,7 +65,7 @@ function exampleFn() {
 exampleFn() // ReferenceError: blockVar is not defined
 ```
 
-### Execution Context
+## Execution Context
 
 JavaScript’s execution context is an abstract concept that stands for the environment in which code is run. It’s how the
 interpreter tracks the program’s progress as it’s being executed. Every time a function or block is run, a new
@@ -91,7 +91,7 @@ function multiplyByTwo(n) {
 multiplyByTwo(5); // logs 10
 ```
 
-### Closures
+## Closures
 
 A __closure__ is a feature that allows a function to not only access variables and functions within its own lexical
 scope, but also to maintain that access even if the function is called outside its original environment. A closure is
@@ -113,7 +113,7 @@ let closure = outerFn();
 closure(); // 7
 ```
 
-### Hoisting
+## Hoisting
 
 __Hoisting__ refers to the process of moving variable and function declarations to the top of their scope, regardless of
 their original position in the code. It means you can use variables and functions before they are declared in the code.
@@ -160,12 +160,12 @@ Value of a in global scope: undefined
 Value of a in local scope: 1
 ```
 
-### `this`
+## `this`
 
 A function's `this` keyword behaves a little differently in JavaScript compared to other languages. It behaves
 differently for _function declarations_ and _arrow functions_.
 
-#### Function declaration
+### Function declaration
 
 Inside a _function declaration_, the value of `this` depends on how the function is called. Think about `this` as a
 hidden parameter of a function — just like the parameters declared in the function definition, `this` is a binding that
@@ -209,7 +209,7 @@ console.log(obj5.getThis()); // { name: 'obj5', getThis: [Function: getThis] }
 If a function is called with this set to undefined or null, this gets substituted
 with [globalThis](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis).
 
-#### Arrow functions
+### Arrow functions
 
 In arrow functions, this retains the value of the enclosing lexical context's this. In other words, when evaluating an
 arrow function's body, the language does not create a new this binding.
