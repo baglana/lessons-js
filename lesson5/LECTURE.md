@@ -1,7 +1,5 @@
 # Lesson 5: Functions
 
-## Theory
-
 ### Lexical Environment
 
 Is a very complicated term for beginners. And would be suggested to learn this concepts after you will become more
