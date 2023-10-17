@@ -1,13 +1,11 @@
 # Lesson 4: Functions
 
-## Theory
-
-### Definition
+## Definition
 
 Functions are the basic building block of JavaScript. Functions allow us to encapsulate a block of code and reuse it
 multiple times. Functions make JavaScript code more readable, organized, reusable, and maintainable.
 
-### Declaration
+## Declaration
 
 ```js
 function greet(name) { // function declaration
@@ -23,7 +21,7 @@ const greet = (name) => { // arrow function
 }
 ```
 
-### Parameters
+## Parameters
 
 Values can be passed to a function using _parameters_. A function can have one or more parameters, and the values will
 be passed by the calling code.
@@ -42,7 +40,7 @@ greet("Bill"); // display Hello Bill undefined
 greet(); // display Hello undefined undefined
 ```
 
-#### Spread arguments and rest parameters
+### Spread arguments and rest parameters
 
 Functions can be called as spread arguments. And get values as rest parameters.
 
@@ -66,7 +64,7 @@ console.log(sum(1, -1)) // 0
 console.log(sum(...[1, 2, 3])) // 6
 ```
 
-#### Default values
+### Default values
 
 In JavaScript, parameters of functions default to `undefined`. However, in some situations it might be useful to set a
 different default value. This is exactly what default parameters do.
@@ -80,7 +78,7 @@ console.log(sum(5)); // 5
 console.log(sum(5, null)); // 5, the same for undefined and null
 ```
 
-### Return
+## Return
 
 By default, functions return `undefined`. But function can return any _single_ data. Function can return nothing which
 is basically undefined.
@@ -95,7 +93,7 @@ function driveCar(person) {
 }
 ```
 
-### Self-Invoking Functions
+## Self-Invoking Functions
 
 Function can be "self-invoked".
 
@@ -105,7 +103,7 @@ Function can be "self-invoked".
 })();
 ```
 
-### Scope
+## Scope
 
 Variables defined inside a function cannot be accessed from anywhere outside the function, because the variable is
 defined only in the scope of the function. However, a function can access all variables and functions defined inside the
@@ -140,7 +138,7 @@ greet();
 console.log(a + b); // error
 ```
 
-### Callback
+## Callback
 
 Functions are first class objects. They can be sent to a functions, add properties and methods, etc.
 
@@ -173,7 +171,7 @@ ask(
 );
 ```
 
-### Recursion
+## Recursion
 
 A function can refer to and call itself. A function that calls itself is called a recursive function. In some ways,
 recursion is analogous to a loop. Both execute the same code multiple times, and both require a condition (to avoid an

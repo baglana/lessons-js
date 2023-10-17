@@ -1,20 +1,18 @@
 # Lesson 3: Object
 
-## Theory
-
-### Definition
+## Definition
 
 JavaScript object is a non-primitive data-type that allows you to store multiple collections of data. It is very
 important and complicated type.
 
-### Declaration
+## Declaration
 
 ```js
 let obj = new Object();
 let obj = {}; // suggested way
 ```
 
-### Keys, properties and methods
+## Keys, properties and methods
 
 A property or method has a key (also known as “name” or “identifier”) before the colon ":" and a value to the right of
 it.
@@ -96,7 +94,7 @@ user.age = undefined;
 console.log(user); // { age: undefined }
 ```
 
-#### Methods
+### Methods
 
 Properties which are functions called methods.
 
@@ -116,7 +114,7 @@ const person = {
 person.greet(); // hello
 ```
 
-#### Checking keys
+### Checking keys
 
 We can check if key exist with `in` operator.
 
@@ -156,7 +154,7 @@ if ("address" in user.contactInfo) {
 }
 ```
 
-#### Optional chaining
+### Optional chaining
 
 Accessing nested object might problematic. Expecting most time just a value or indication that it does not exist:
 
@@ -178,9 +176,9 @@ console.log(user?.["age"]) // 30
 console.log(user?.greet()) // "Hello"
 ```
 
-### Loop
+## Loop
 
-#### For
+### For
 
 Object can be iterated via `for..in`
 
@@ -207,7 +205,7 @@ console.log(Object.values(user)); // [ "John", 30, true ]
 console.log(Object.entries(user)); // [ [ "name", "John" ], [ "age", 30 ], [ "isAdmin", true ] ]
 ```
 
-### Immutable and mutable
+## Immutable and mutable
 
 One of the fundamental differences of objects versus primitives is that objects are stored and copied “by reference”,
 whereas primitive values: strings, numbers, booleans, etc. Are always copied “as a whole value”.
@@ -258,7 +256,7 @@ let newManager = Object.assign({}, manager, salesman);
 console.log(newManager); // { "name": "Dwight", "company": "Dunder Mifflin" }
 ```
 
-#### Spreading and destructuring
+### Spreading and destructuring
 
 Objects can be spread, it wil create copy of the object.
 
@@ -286,7 +284,7 @@ console.log(rest); // { "company": "Dunder Mifflin" }
 let {company: companyName} = manager; // rename variable
 ```
 
-#### let vs const
+### let vs const
 
 `let` and `const` both used to declare variable. Both cannot redeclare variable. With `let` variable can be reassigned
 but with `const` cannot. Think more like `let` allows to change pointer whereas `const` does not.
@@ -306,20 +304,20 @@ manager.age = 40;
 console.log(manager); // { "name": "Michael", "company": "Dunder Mifflin", "age": 40 }
 ```
 
-### Properties and Methods
+## Properties and Methods
 
 We will talk about some important properties and methods but please check
 the [list](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#constructor) for
 others
 
-#### Static methods
+### Static methods
 
 * [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 * [Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 * [Object.values()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
 * [Object.entries()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
 
-#### Instance methods
+### Instance methods
 
 * [Object.prototype.toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)
 

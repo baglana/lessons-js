@@ -259,5 +259,6 @@ your own judgement.
 
 https://github.com/talgat-ruby/lessons-js/assets/17277013/3b8ec89c-a156-4294-afc1-492d1ee2c63d
 
-Technologies needs to be used: terminal(powershell in Windows), NodeJS, git, Javascript.
+Technologies needs to be used: terminal(powershell in Windows), NodeJS, git, Javascript. Create repo in github and send
+me link.
 
