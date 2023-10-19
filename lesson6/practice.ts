@@ -162,3 +162,8 @@
 // }
 //
 // getAndSetName(gandalf);
+
+// the `?` operator here marks parameter `c` as optional
+function add(a: number, b: number, c = 0) {
+  return a + b + c;
+}
