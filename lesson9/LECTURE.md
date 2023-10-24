@@ -273,6 +273,183 @@ new Promise((resolve) => {
 
 ### 1
 
+Create a countdown timer that starts from a specified number of minutes and counts down to zero. Use `setInterval`.
+
+```ts
+startCountdown(10) // 10, 9, 8 etc 
+```
+
+### 2
+
+Create a countdown timer that starts from a specified number of minutes and counts down to zero. Use `setTimeout`.
+
+```ts
+startCountdown(10) // 10, 9, 8 etc 
+```
+
+### 3
+
+Write a utility which prints numbers starting from an initial value and increment in steps which can be started and stopped by the user, any number of times
+
+```ts
+const timerObj = timer(100, 10); // initial value, step
+timerObj.startTimer();
+setTimeout(() => {
+    timerObj.stopTimer(); // logs 100, 110, 120, 130, 140, 150
+}, 5000);
+```
+
+### 4
+
+What is the output of the code below:
+
+```ts
+console.log('start'); 
+
+const promise1 = new Promise((resolve, reject) => {
+    console.log(1);
+});
+
+console.log('end');
+```
+
+### 5
+
+What is the output of the code below:
+
+```ts
+console.log('start'); 
+
+const promise1 = new Promise((resolve, reject) => {
+    console.log(1);
+    resolve(2);
+}) 
+
+promise1.then(res => {
+    console.log(res);
+}) 
+
+console.log('end');
+```
+
+### 6
+
+What is the output of the code below:
+
+```ts
+console.log('start'); 
+
+const promise1 = new Promise((resolve, reject) => {
+    console.log(1);
+    resolve(2);
+    console.log(3);
+})
+
+promise1.then(res => {
+    console.log(res);
+}) 
+
+console.log('end');
+```
+
+### 7
+
+What is the output of the code below:
+
+```ts
+console.log('start'); 
+
+const promise1 = new Promise((resolve, reject) => {
+    console.log(1);
+}) 
+
+promise1.then(res => {
+    console.log(2);
+})
+
+console.log('end');
+```
+
+### 8
+
+What is the output of the code below:
+
+```ts
+console.log('start');
+
+const fn = () => (new Promise((resolve, reject) => {
+    console.log(1);
+    resolve('success');
+})) 
+
+console.log('middle');
+
+fn().then(res => {
+    console.log(res);
+})
+
+console.log('end');
+```
+
+### 9
+
+What is the output of the code below:
+
+```ts
+console.log('start');
+
+setTimeout(() => {
+    console.log('setTimeout');
+}) 
+
+Promise.resolve().then(() => {
+    console.log('resolve');
+}) 
+
+console.log('end');
+```
+
+### 10
+
+What is the output of the code below:
+
+```ts
+const promise = new Promise((resolve, reject) => {
+    resolve("success1");
+    reject("fail");
+    resolve("success2");
+});
+
+promise
+    .then(res => {
+        console.log("then: ", res);
+    })
+    .catch(err => {
+        console.log("catch: ", err);
+    })
+```
+
+### 11
+
+What is the output of the code below:
+
+```ts
+console.log('start'); 
+
+const promise1 = new Promise((resolve, reject) => {
+    console.log(1)
+    resolve(2)
+}) 
+
+promise1.then(res => {
+    console.log(res)
+}) 
+
+console.log('end');
+```
+
+### 12
+
 What is the output of the code below:
 
 ```ts
@@ -285,17 +462,5 @@ const promise = new Promise(function (resolve) {
 promise.then(console.log);
 ```
 
-### 2
+Reference: [link1](https://levelup.gitconnected.com/vimp-javascript-promise-implementation-challenges-5a4f120d8606), [link2](https://levelup.gitconnected.com/vimp-javascript-promise-implementation-challenges-5a4f120d8606)
 
-The built-in function `setTimeout` uses callbacks. Create a promise-based alternative.
-
-The function `wait(ms)` should return a promise. That promise should resolve after `ms` milliseconds, so that we can
-add `.then` to it, like this:
-
-```js
-function wait(ms: number) {
-	// your code
-}
-
-wait(3000).then(() => console.log("runs after 3 seconds"));
-```

@@ -1,75 +1,48 @@
-console.log("Start request");
-
-// async/await
-
-async function callSwapi() {
-  try {
-    const promise = fetch("https://swapi.dev/api/films");
-
-    const response1 = await promise;
-
-    console.log("success 1");
-
-    if (!response1.ok) {
-      return Promise.reject(response1.statusText);
-    }
-
-    const json1 = await response1.json();
-
-    console.log("success 2");
-
-    const response2 = await fetch(json1.results[0].characters[0]);
-
-    console.log("success 3");
-
-    if (!response2.ok) {
-      return Promise.reject(response2.statusText);
-    }
-
-    const json2 = await response2.json();
-
-    console.log("success 4", json2);
-  } catch (err) {
-    console.error("err", err);
-  } finally {
-    console.log("FINALLY");
-  }
-}
-
-callSwapi();
-
-// fetch("https://swapi.dev/api/films")
-//   .then((response) => {
-//     console.log("success 1");
-//
-//     if (!response.ok) {
-//       return Promise.reject(response.statusText);
+// function newPromise(isResolved: boolean) {
+//   return new Promise((resolve, reject) => {
+//     if (!isResolved) {
+//       reject(new Error("promise was rejected"));
 //     }
-//
-//     return response.json();
-//   })
-//   .then((response) => {
-//     console.log("success 2");
-//
-//     return fetch(response.results[0].characters[0]);
-//   })
-//   .then((response) => {
-//     console.log("success 3");
-//
-//     if (!response.ok) {
-//       return Promise.reject(response.statusText);
-//     }
-//
-//     if (response) {
-//       return response.json();
-//     }
-//   })
-//   .then((response) => {
-//     console.log("success 4", response);
-//   })
-//   .catch((err) => {
-//     console.error("err", err);
-//   })
-//   .finally(() => {
-//     console.log("FINALLY");
+//     resolve("promise was resolved");
 //   });
+// }
+//
+// const promise = newPromise(false);
+//
+// async function someAsyncFunction(promise: Promise<unknown>) {
+//   try {
+//     const response = await promise
+//
+//     console.log("response", response)
+//   } catch (err) {
+//     console.log("err", err)
+//   } finally {
+//
+//   }
+// }
+//
+// someAsyncFunction(promise)
+
+// console.log("start timeout");
+//
+// const id = setTimeout(() => {
+//   console.log("called after 2 sec");
+// }, 2000)
+//
+// clearTimeout(id)
+//
+// setTimeout(() => {
+//   console.log("call after 1 sec");
+// }, 1000)
+//
+// console.log("end timeout");
+
+// let i = 0
+// const intervalId = setInterval(() => {
+//   i++;
+//   console.log(i);
+// }, 1000)
+//
+// setTimeout(() => {
+//   clearInterval(intervalId);
+// }, 5000)
