@@ -189,193 +189,148 @@ _Reference_: [More](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 
 ### 1
 
-Send `GET` request to https://sample-singularity.hasura.app/api/rest/companies. In order to fetch all companies info.
+Send `GET` request to `https://sample-singularity.hasura.app/api/rest/companies`. In order to fetch all companies info.
 
 **Don't forget about Headers.**
 
+Response sample
+
+```json
+{
+  "companies": [
+    {
+      "ceo": "string",
+      "created_at": null,
+      "founded_year": 0,
+      "id": 0,
+      "name": "string",
+      "type": "string",
+      "updated_at": null
+    }
+  ]
+}
+```
+
 ### 2
 
-Create a countdown timer that starts from a specified number of minutes and counts down to zero. Use `setTimeout`.
+Send `GET` request to `https://sample-singularity.hasura.app/api/rest/companies/:id`. In order to fetch a single company
+info.
 
-```ts
-startCountdown(10); // 10, 9, 8 etc
+**Don't forget about Headers.**
+
+Response sample
+
+```json
+{
+  "companies_by_pk": {
+    "ceo": "string",
+    "created_at": null,
+    "founded_year": 0,
+    "id": 0,
+    "name": "string",
+    "type": "string",
+    "updated_at": null
+  }
+}
 ```
 
 ### 3
 
-Write a utility which prints numbers starting from an initial value and increment in steps which can be started and
-stopped by the user, any number of times
+Send `POST` request to `https://sample-singularity.hasura.app/api/rest/companies`. In order to add a single company
+info.
 
-```ts
-const timerObj = timer(100, 10); // initial value, step
-timerObj.startTimer();
-setTimeout(() => {
-  timerObj.stopTimer(); // logs 100, 110, 120, 130, 140, 150
-}, 5000);
+**Don't forget about Headers.**
+
+Request sample
+
+```json
+{
+  "object": {
+    "ceo": "string",
+    "created_at": null,
+    "founded_year": 0,
+    "id": 0,
+    "name": "string",
+    "type": "string",
+    "updated_at": null
+  }
+}
+```
+
+Response sample
+
+```json
+{
+  "insert_companies_one": {
+    "ceo": "string",
+    "created_at": null,
+    "founded_year": 0,
+    "id": 0,
+    "name": "string",
+    "type": "string",
+    "updated_at": null
+  }
+}
 ```
 
 ### 4
 
-What is the output of the code below:
+Send `PATCH` request to `https://sample-singularity.hasura.app/api/rest/companies/:id`. In order to update a single
+company info.
 
-```ts
-console.log("start");
+**Don't forget about Headers.**
 
-const promise1 = new Promise((resolve, reject) => {
-  console.log(1);
-});
+Request sample
 
-console.log("end");
+```json
+{
+  "object": {
+    "ceo": "string",
+    "created_at": null,
+    "founded_year": 0,
+    "id": 0,
+    "name": "string",
+    "type": "string",
+    "updated_at": null
+  }
+}
+```
+
+Response sample
+
+```json
+{
+  "update_companies_by_pk": {
+    "ceo": "string",
+    "created_at": null,
+    "founded_year": 0,
+    "id": 0,
+    "name": "string",
+    "type": "string",
+    "updated_at": null
+  }
+}
 ```
 
 ### 5
 
-What is the output of the code below:
+Send `DELETE` request to `https://sample-singularity.hasura.app/api/rest/companies/:id`. In order to update a single
+company info.
 
-```ts
-console.log("start");
+**Don't forget about Headers.**
 
-const promise1 = new Promise((resolve, reject) => {
-  console.log(1);
-  resolve(2);
-});
+Response sample
 
-promise1.then((res) => {
-  console.log(res);
-});
-
-console.log("end");
+```json
+{
+  "delete_companies_by_pk": {
+    "ceo": "string",
+    "created_at": null,
+    "founded_year": 0,
+    "id": 0,
+    "name": "string",
+    "type": "string",
+    "updated_at": null
+  }
+}
 ```
-
-### 6
-
-What is the output of the code below:
-
-```ts
-console.log("start");
-
-const promise1 = new Promise((resolve, reject) => {
-  console.log(1);
-  resolve(2);
-  console.log(3);
-});
-
-promise1.then((res) => {
-  console.log(res);
-});
-
-console.log("end");
-```
-
-### 7
-
-What is the output of the code below:
-
-```ts
-console.log("start");
-
-const promise1 = new Promise((resolve, reject) => {
-  console.log(1);
-});
-
-promise1.then((res) => {
-  console.log(2);
-});
-
-console.log("end");
-```
-
-### 8
-
-What is the output of the code below:
-
-```ts
-console.log("start");
-
-const fn = () =>
-  new Promise((resolve, reject) => {
-    console.log(1);
-    resolve("success");
-  });
-
-console.log("middle");
-
-fn().then((res) => {
-  console.log(res);
-});
-
-console.log("end");
-```
-
-### 9
-
-What is the output of the code below:
-
-```ts
-console.log("start");
-
-setTimeout(() => {
-  console.log("setTimeout");
-});
-
-Promise.resolve().then(() => {
-  console.log("resolve");
-});
-
-console.log("end");
-```
-
-### 10
-
-What is the output of the code below:
-
-```ts
-const promise = new Promise((resolve, reject) => {
-  resolve("success1");
-  reject("fail");
-  resolve("success2");
-});
-
-promise
-  .then((res) => {
-    console.log("then: ", res);
-  })
-  .catch((err) => {
-    console.log("catch: ", err);
-  });
-```
-
-### 11
-
-What is the output of the code below:
-
-```ts
-console.log("start");
-
-const promise1 = new Promise((resolve, reject) => {
-  console.log(1);
-  resolve(2);
-});
-
-promise1.then((res) => {
-  console.log(res);
-});
-
-console.log("end");
-```
-
-### 12
-
-What is the output of the code below:
-
-```ts
-const promise = new Promise(function (resolve) {
-  resolve(1);
-
-  setTimeout(() => resolve(2), 1000);
-});
-
-promise.then(console.log);
-```
-
-Reference: [link1](https://levelup.gitconnected.com/vimp-javascript-promise-implementation-challenges-5a4f120d8606), [link2](https://levelup.gitconnected.com/vimp-javascript-promise-implementation-challenges-5a4f120d8606)
