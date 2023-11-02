@@ -3,4 +3,7 @@ export const user = {
   type: "wizard",
 };
 
-export default user;
+
+const hogwarts = "Hogwarts";
+export default hogwarts;
+

@@ -1,75 +1,107 @@
-// // 1. borrow() check if exists, if yes land for 2 weeks
-//
-// class Library {
-//   publications: Publication[];
-//
-//   constructor(publications: Publication[]) {
-//     this.publications = publications;
-//   }
-//
-//   borrow(searchName: string) {
-//     const ind = this.publications.findIndex(
-//       (publication) => publication.name === searchName
-//     );
-//
-//     if (ind === -1) {
-//       console.log("We don't have this book!");
-//       return;
-//     }
-//
-//     if (this.publications[ind].returnDate) {
-//       console.log(
-//         `Somebody already borrowed ${this.publications[ind].name}, will return before ${this.publications[ind].returnDate}`
-//       );
-//       return;
-//     }
-//
-//     const today = new Date();
-//     today.setDate(today.getDate() + 14);
-//     this.publications[ind].returnDate = today;
-//     console.log(
-//       `Successfully borrowed, please return ${this.publications[ind].name} before ${this.publications[ind].returnDate}`
-//     );
-//   }
-// }
-//
-// class Publication {
-//   name: string;
-//   year: number;
-//   author: string;
-//   returnDate: Date | null;
-//
-//   constructor(name: string, year: number, author: string) {
-//     this.name = name;
-//     this.year = year;
-//     this.author = author;
-//     this.returnDate = null;
-//   }
-// }
-//
-// class Book extends Publication {
-//   constructor(name: string, year: number, author: string) {
-//     super(name, year, author);
-//   }
-// }
-//
-// class Comics extends Publication {
-//   constructor(name: string, year: number, author: string) {
-//     super(name, year, author);
-//   }
-// }
-//
-// const book1 = new Book("Lord of the rings", 1968, "J. R. R. Tolkien");
-// const book2 = new Book(
-//   "Harry Potter and Chamber of Secrets",
-//   1998,
-//   "J. K. Rowling"
-// );
-//
-// const comics1 = new Comics("Sandman", 1989, "Neil Gaiman");
-// const comics2 = new Comics("Swamp Thing", 1971, "Allan Moore");
-//
-// const lib = new Library([book1, book2, comics1, comics2]);
-//
-// lib.borrow(book2.name);
-// lib.borrow(book2.name);
+class PaperBased {
+  borrowedBy: Person | null;
+  #name: string;
+  #author: string;
+
+  constructor(name: string, author: string) {
+    this.#name = name;
+    this.#author = author;
+    this.borrowedBy = null;
+  }
+
+  get name() {
+    return this.#name;
+  }
+}
+
+class Book extends PaperBased {
+  constructor(name: string, author: string) {
+    super(name, author);
+  }
+}
+
+class Comics extends PaperBased {
+  #issue: number;
+
+  constructor(name: string, author: string, issue: number) {
+    super(name, author);
+    this.#issue = issue;
+  }
+}
+
+class Library {
+  #books: PaperBased[];
+
+  constructor(books: PaperBased[]) {
+    this.#books = books;
+  }
+
+  borrowBook(bookName: string, borrower: Person) {
+    for (const book of this.#books) {
+      if (book.name === bookName) {
+        if (book.borrowedBy) {
+          console.log(
+            `error: book: ${book.name} was already borrowed by ${book.borrowedBy.name}`
+          );
+          return;
+        }
+        book.borrowedBy = borrower;
+        console.log(
+          `success: book: ${book.name} is borrowed by ${book.borrowedBy.name}`
+        );
+      }
+    }
+  }
+
+  returnBook(bookName: string) {
+    for (const book of this.#books) {
+      if (book.name === bookName) {
+        if (!book.borrowedBy) {
+          console.log(`error: book: ${book.name} can be borrowed`);
+          return;
+        }
+        book.borrowedBy = null;
+        console.log(`success: book: ${book.name} was returned`);
+      }
+    }
+  }
+}
+
+class SchoolLibrary {}
+
+class Person {
+  #name: string;
+
+  constructor(name: string) {
+    this.#name = name;
+  }
+
+  get name() {
+    return this.#name;
+  }
+}
+
+const harryPotter = new Book(
+  "Harry Potter and Chamber of Secrtes",
+  "J. K. Rowling"
+);
+const lordOfTheRings = new Book("Lord of the Rings", "Tolkien");
+const abaiJoly = new Book("Abai Joly", "M. Auezov");
+const vendeta = new Comics("V for Vendeta", "Alan Moore", 2);
+const spiderMan = new Comics("Spider Man", "Stan Lee", 20);
+
+const lib = new Library([
+  harryPotter,
+  lordOfTheRings,
+  abaiJoly,
+  vendeta,
+  spiderMan,
+]);
+
+const joldas = new Person("Joldas");
+const tomiris = new Person("Tomiris");
+
+lib.borrowBook(harryPotter.name, joldas);
+lib.borrowBook(harryPotter.name, tomiris);
+lib.returnBook(harryPotter.name);
+lib.returnBook(harryPotter.name);
