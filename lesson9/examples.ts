@@ -53,9 +53,10 @@ function timer(initValue: number, step: number) {
         step: step,
         intervalID: 0,
         startTimer() {
-            this.intervalID = window.setInterval(() => {
-                console.log(this.value);
+            console.log(this.value);
+            this.intervalID = setInterval(() => {
                 this.value += step;
+                console.log(this.value);
             }, 1000);
         },
         stopTimer() {
